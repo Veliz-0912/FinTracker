@@ -1,3 +1,22 @@
+// LÓGICA DEL MENÚ HAMBURGUESA
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+const navItems = document.querySelectorAll('.nav-item');
+
+// Abrir/Cerrar menú al hacer clic en las 3 rayas
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('is-active');
+    navLinks.classList.toggle('active');
+});
+
+// Cerrar el menú automáticamente al seleccionar un enlace
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-active');
+        navLinks.classList.remove('active');
+    });
+});
+
 // CONTROL DE LA VENTANA MODAL (ACCESO RÁPIDO)
 function abrirModal() {
     const modal = document.getElementById('modalRegistro');

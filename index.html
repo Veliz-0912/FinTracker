@@ -8,16 +8,28 @@
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN FIJA -->
+    <!-- BARRA DE NAVEGACIÓN FIJA CON MENÚ HAMBURGUESA -->
     <header class="navbar">
         <div class="logo">SmartBudget</div>
-        <nav class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#caracteristicas">Características</a>
-            <a href="#testimonios">Testimonios</a>
-            <a href="#planes">Planes</a>
+        
+        <!-- Ícono del Menú Hamburguesa -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="#inicio" class="nav-item">Inicio</a>
+            <a href="#caracteristicas" class="nav-item">Características</a>
+            <a href="#testimonios" class="nav-item">Testimonios</a>
+            <a href="#planes" class="nav-item">Planes</a>
+            <!-- Botón dentro del menú para celulares -->
+            <button class="btn-primary btn-mobile" onclick="abrirModal()">Empieza Gratis</button>
         </nav>
-        <button class="btn-primary" onclick="abrirModal()">Empieza Gratis</button>
+        
+        <!-- Botón fuera del menú para PC -->
+        <button class="btn-primary btn-desktop" onclick="abrirModal()">Empieza Gratis</button>
     </header>
 
     <!-- SECCIÓN HERO (INICIO) -->
@@ -31,7 +43,6 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- Representación visual de los mockups móviles descritos -->
             <div class="mockup-placeholder">
                 <div class="mockup-screen">
                     <span class="mockup-title">Balance Disponible</span>

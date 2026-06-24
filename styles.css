@@ -1,4 +1,4 @@
-/* colores de nuestra app */
+/* VARIABLES DE DISEÑO CORPORATIVO */
 :root {
     --color-primary: #1D9E75;
     --color-dark: #0F6E56;
@@ -390,94 +390,107 @@ footer {
 }
 
 /* =========================================
-   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   MENÚ HAMBURGUESA Y DISEÑO RESPONSIVO
 ========================================= */
 
-@media screen and (max-width: 900px) {
-    /* Ajuste de Hero para Tablets */
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 120px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 50px;
-    }
-
-    .hero-image {
-        max-width: 100%;
-    }
-
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-    }
+/* Ocultar elementos móviles en PC */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.btn-mobile {
+    display: none;
+}
+
+/* Ajustes para Celulares y Tablets */
 @media screen and (max-width: 768px) {
-    /* Barra de Navegación */
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 5%;
-    }
-
-    .nav-links {
-        margin: 15px 0;
+    .menu-toggle {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
     }
 
-    .nav-links a {
-        margin: 0 5px;
-        font-size: 14px;
+    .btn-desktop {
+        display: none;
     }
 
-    /* Ajuste del Hero para celulares */
-    .hero {
-        padding-top: 140px; 
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero-buttons * {
-        margin-right: 0;
+    .btn-mobile {
+        display: block;
+        margin-top: 15px;
         width: 100%;
     }
 
-    /* Grillas a una sola columna */
-    .features-grid, 
-    .testimonials-container, 
-    .pricing-grid {
+    /* Estilos del menú oculto que se despliega */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: #ffffff;
+        text-align: center;
+        padding: 20px 5%;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0; /* Aparece deslizando desde la izquierda */
+    }
+
+    .nav-links a {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    /* Animación del ícono hamburguesa al hacer clic (se vuelve una X) */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+
+    /* Resto de ajustes responsivos del Hero y Tarjetas */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-buttons * {
+        margin-right: 0;
+    }
+    .hero-image {
+        max-width: 100%;
+    }
+    .features-grid, .testimonials-container, .pricing-grid {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-
-    .feature-card, 
-    .testimonial-card, 
-    .price-card {
+    .feature-card, .testimonial-card, .price-card {
         width: 100%;
-        max-width: 100%;
-    }
-
-    /* Ajuste de textos en secciones */
-    .features h2, 
-    .testimonials h2, 
-    .pricing h2 {
-        font-size: 26px;
-        margin-bottom: 30px;
     }
 }
 
