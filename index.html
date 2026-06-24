@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartBudget - Toma el control de tu dinero sin complicaciones</title>
+    <title>SmartBudget - Toma el control de tu dinero</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN FIJA CON MENÚ HAMBURGUESA -->
+    <!-- NAVEGACIÓN (CABECERA VERDE) -->
     <header class="navbar">
         <div class="logo">SmartBudget</div>
         
-        <!-- Ícono del Menú Hamburguesa -->
+        <!-- Menú Hamburguesa -->
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -20,130 +20,193 @@
         </div>
 
         <nav class="nav-links" id="nav-links">
-            <a href="#inicio" class="nav-item">Inicio</a>
-            <a href="#caracteristicas" class="nav-item">Características</a>
-            <a href="#testimonios" class="nav-item">Testimonios</a>
-            <a href="#planes" class="nav-item">Planes</a>
-            <!-- Botón dentro del menú para celulares -->
-            <button class="btn-primary btn-mobile" onclick="abrirModal()">Empieza Gratis</button>
+            <a href="#inicio" class="nav-pill active">Inicio</a>
+            <a href="#funciones" class="nav-pill">Funciones</a>
+            <a href="#precios" class="nav-pill">Precios</a>
+            <a href="#testimonios" class="nav-pill">Testimonios</a>
+            <button class="nav-pill outline" onclick="abrirModal('login')">Iniciar sesión</button>
+            <button class="nav-pill solid" onclick="abrirModal('registro')">Empieza gratis</button>
         </nav>
-        
-        <!-- Botón fuera del menú para PC -->
-        <button class="btn-primary btn-desktop" onclick="abrirModal()">Empieza Gratis</button>
     </header>
 
-    <!-- SECCIÓN HERO (INICIO) -->
-    <section id="inicio" class="hero">
+    <!-- HERO SECTION (BLANCO) -->
+    <section id="inicio" class="hero bg-white">
         <div class="hero-content">
+            <span class="badge">NUEVO - ÚNETE AHORA MISMO</span>
             <h1>Toma el control de tu dinero sin complicaciones</h1>
-            <p>Gestiona tus finanzas personales de forma simple, rápida y automatizada. Diseñada para universitarios, profesionales jóvenes y freelancers.</p>
+            <p>SmartBudget es la app que simplifica tus finanzas. Gestiona, ahorra y visualiza tu progreso en tiempo real desde cualquier lugar.</p>
             <div class="hero-buttons">
-                <button class="btn-primary btn-large" onclick="abrirModal()">Empieza Gratis Ahora</button>
-                <a href="#caracteristicas" class="btn-secondary">Ver más</a>
+                <button class="btn-solid" onclick="abrirModal('registro')">Empieza gratis ahora</button>
+                <button class="btn-outline">Ver demo</button>
             </div>
         </div>
         <div class="hero-image">
-            <div class="mockup-placeholder">
-                <div class="mockup-screen">
-                    <span class="mockup-title">Balance Disponible</span>
-                    <span class="mockup-amount">S/ 1,240.00</span>
-                </div>
+            <img src="public\imagen helanding.jpg" alt="SmartBudget App Mockups" class="mockup-img">
+        </div>
+    </section>
+
+    <!-- FUNCIONES (VERDE) -->
+    <section id="funciones" class="features bg-green">
+        <div class="section-header">
+            <span class="badge badge-light">Funciones</span>
+            <h2>Todo lo que necesitas para controlar tu dinero</h2>
+            <p>Descubre por qué somos la plataforma preferida por miles de usuarios para manejar sus finanzas.</p>
+        </div>
+        <div class="grid-3">
+            <div class="feature-item">
+                <div class="icon-placeholder">📋</div>
+                <h3>Registro rápido de gastos</h3>
+                <p>Anota todo en segundos.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-placeholder">🐷</div>
+                <h3>Metas de ahorro</h3>
+                <p>Cumple tus objetivos.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-placeholder">📊</div>
+                <h3>Reportes visuales</h3>
+                <p>Gráficos interactivos.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-placeholder">🔔</div>
+                <h3>Notificaciones inteligentes</h3>
+                <p>Alertas de presupuesto.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-placeholder">📑</div>
+                <h3>Categorías personalizadas</h3>
+                <p>Adapta todo a tu estilo.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-placeholder">📄</div>
+                <h3>Exporta reportes</h3>
+                <p>Descarga en Excel o PDF.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CARACTERÍSTICAS -->
-    <section id="caracteristicas" class="features">
-        <h2>¿Por qué elegir SmartBudget?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Registro en 3 Pasos</h3>
-                <p>Anota tus ingresos y gastos rápidamente desde tu celular en segundos, evitando olvidos y desorden.</p>
+    <!-- PASOS (BLANCO) -->
+    <section class="steps bg-white">
+        <div class="section-header">
+            <span class="badge">Cómo funciona</span>
+            <h2>Empieza en 4 pasos simples</h2>
+            <p>Te acompañamos desde el registro hasta el análisis de tus finanzas.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">1</div>
+                <h3>Crea tu cuenta</h3>
+                <p>Regístrate en menos de 2 minutos.</p>
             </div>
-            <div class="feature-card">
-                <h3>Alertas Inteligentes</h3>
-                <p>Recibe notificaciones proactivas antes de exceder tus límites de presupuesto por categoría.</p>
+            <div class="step">
+                <div class="step-circle">2</div>
+                <h3>Registra tus gastos</h3>
+                <p>Añade tus movimientos diarios rápidamente.</p>
             </div>
-            <div class="feature-card">
-                <h3>Gráficos Interactivos</h3>
-                <p>Visualiza de manera clara y estética a dónde se va realmente tu dinero cada mes sin usar complejos archivos Excel.</p>
+            <div class="step">
+                <div class="step-circle">3</div>
+                <h3>Visualiza y mejora</h3>
+                <p>Analiza tus hábitos con gráficos claros.</p>
+            </div>
+            <div class="step">
+                <div class="step-circle">4</div>
+                <h3>¡Toma el control!</h3>
+                <p>Alcanza tus metas financieras.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE TESTIMONIOS -->
-    <section id="testimonios" class="testimonials">
-        <h2>Lo que dicen nuestros usuarios</h2>
-        <div class="testimonials-container">
+    <!-- TESTIMONIOS (VERDE) -->
+    <section id="testimonios" class="testimonials bg-green">
+        <div class="section-header">
+            <span class="badge badge-light">Testimonios</span>
+            <h2>Lo que dicen nuestros usuarios</h2>
+            <p>Personas como tú ya están mejorando su vida financiera.</p>
+        </div>
+        <div class="grid-3">
             <div class="testimonial-card">
-                <p class="quote">"Siento que gasto mi dinero sin darme cuenta, pero con SmartBudget logré identificar mis gastos hormiga muy rápido."</p>
-                <h4>Adriana Pérez</h4>
-                <span>Estudiante Universitaria</span>
+                <div class="avatar" style="background-color:#f0f0f0;">👩</div>
+                <h4>Ana María</h4>
+                <p>"La mejor app para registrar mis gastos de universidad."</p>
             </div>
             <div class="testimonial-card">
-                <p class="quote">"La adaptabilidad para gestionar mis ingresos variables por proyectos es lo que no encontré en ninguna otra aplicación financiera."</p>
+                <div class="avatar" style="background-color:#f0f0f0;">👨</div>
                 <h4>Diego Torres</h4>
-                <span>Trabajador Freelancer</span>
+                <p>"Como freelancer, las proyecciones de ingresos me salvaron la vida."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="avatar" style="background-color:#f0f0f0;">👩</div>
+                <h4>Adriana Pérez</h4>
+                <p>"Identifiqué mis gastos hormiga gracias a los reportes."</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE PLANES (PRECIOS) -->
-    <section id="planes" class="pricing">
-        <h2>Planes diseñados para ti</h2>
-        <div class="pricing-grid">
+    <!-- PRECIOS (BLANCO) -->
+    <section id="precios" class="pricing bg-white">
+        <div class="section-header">
+            <span class="badge">Precios</span>
+            <h2>Planes para cada etapa</h2>
+            <p>Elige el que mejor se adapte a tus necesidades.</p>
+        </div>
+        <div class="grid-3">
             <div class="price-card">
-                <h3>Plan Gratuito</h3>
-                <div class="price">S/ 0<span>/mes</span></div>
+                <div class="icon-placeholder">👤</div>
+                <h3>Gratuito</h3>
+                <div class="price">S/ 0 <span>/ mes</span></div>
                 <ul>
-                    <li>Registro manual de movimientos</li>
-                    <li>Dashboard con balance general</li>
-                    <li>Gráficos de consumo básicos</li>
+                    <li>Registro manual básico</li>
+                    <li>Dashboard general</li>
+                    <li>Soporte estándar</li>
                 </ul>
-                <button class="btn-secondary" onclick="abrirModal()">Elegir Plan</button>
+                <button class="btn-solid" onclick="abrirModal('registro')">Elegir</button>
             </div>
-            <div class="price-card pro-card">
-                <div class="badge-pro">Recomendado</div>
-                <h3>Plan Pro</h3>
-                <div class="price">S/ 15<span>/mes</span></div>
+            <div class="price-card pro">
+                <div class="icon-placeholder">🔥</div>
+                <h3>Pro</h3>
+                <div class="price">S/ 15 <span>/ mes</span></div>
                 <ul>
-                    <li>Análisis financiero avanzado con IA</li>
-                    <li>Proyecciones de liquidez futuras</li>
-                    <li>Detección automatizada de Gastos Hormiga</li>
+                    <li>Análisis financiero con IA</li>
+                    <li>Gastos hormiga automáticos</li>
+                    <li>Metas ilimitadas</li>
                 </ul>
-                <button class="btn-primary" onclick="abrirModal()">Obtener Pro</button>
+                <button class="btn-solid" onclick="abrirModal('registro')">Elegir</button>
+            </div>
+            <div class="price-card">
+                <div class="icon-placeholder">👑</div>
+                <h3>Premium</h3>
+                <div class="price">S/ 29 <span>/ mes</span></div>
+                <ul>
+                    <li>Todo lo del plan Pro</li>
+                    <li>Exportación en Excel/PDF</li>
+                    <li>Soporte prioritario</li>
+                </ul>
+                <button class="btn-solid" onclick="abrirModal('registro')">Elegir</button>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 FinTrackers. Todos los derechos reservados. IHC y Tecnologías Móviles - UPC.</p>
-    </footer>
+    <!-- CTA FOOTER (VERDE CLARO / OSCURO) -->
+    <section class="cta bg-green">
+        <h2>Empieza a controlar tu dinero hoy</h2>
+        <p>Únete a más de 2,400 usuarios que ya tomaron el control de sus finanzas.</p>
+        <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+            <button class="btn-solid" onclick="abrirModal('registro')" style="background-color: white; color: var(--color-primary);">Crear cuenta Gratis</button>
+            <button class="btn-outline" style="color: white; border-color: white;">Ver cómo funciona</button>
+        </div>
+    </section>
 
-    <!-- VENTANA MODAL FLOTANTE (REGISTRO / ONBOARDING SIMULADO) -->
-    <div id="modalRegistro" class="modal">
+    <!-- MODAL SIMPLE SIMULADO -->
+    <div id="modalApp" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="cerrarModal()">&times;</span>
-            <h3>Crea tu cuenta en SmartBudget</h3>
-            <form id="formRegistro">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" required placeholder="Ej. Adriana Pérez">
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" required placeholder="ejemplo@correo.com">
-                </div>
-                <div class="form-group">
-                    <label for="perfil">Tipo de Perfil</label>
-                    <select id="perfil">
-                        <option value="universitario">Joven Universitario</option>
-                        <option value="profesional">Joven Profesional</option>
-                        <option value="freelancer">Trabajador Independiente / Freelancer</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary btn-block">Registrarme e Iniciar Onboarding</button>
+            <h3 id="modalTitle" style="color: var(--color-primary); margin-bottom: 20px;">Título</h3>
+            <form id="modalForm">
+                <input type="email" placeholder="Correo electrónico" class="input-form" required>
+                <input type="password" placeholder="Contraseña" class="input-form" required>
+                <button type="submit" class="btn-solid" style="width: 100%;">Continuar</button>
             </form>
         </div>
     </div>

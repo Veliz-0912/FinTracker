@@ -1,15 +1,13 @@
-// LÓGICA DEL MENÚ HAMBURGUESA
+// MENÚ HAMBURGUESA
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
-const navItems = document.querySelectorAll('.nav-item');
+const navItems = document.querySelectorAll('.nav-pill');
 
-// Abrir/Cerrar menú al hacer clic en las 3 rayas
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('is-active');
     navLinks.classList.toggle('active');
 });
 
-// Cerrar el menú automáticamente al seleccionar un enlace
 navItems.forEach(item => {
     item.addEventListener('click', () => {
         mobileMenu.classList.remove('is-active');
@@ -17,36 +15,34 @@ navItems.forEach(item => {
     });
 });
 
-// CONTROL DE LA VENTANA MODAL (ACCESO RÁPIDO)
-function abrirModal() {
-    const modal = document.getElementById('modalRegistro');
+// MODAL LÓGICA BÁSICA
+function abrirModal(tipo) {
+    const modal = document.getElementById('modalApp');
+    const title = document.getElementById('modalTitle');
+    
+    if(tipo === 'login') {
+        title.innerText = 'Iniciar Sesión';
+    } else {
+        title.innerText = 'Crea tu Cuenta';
+    }
+    
     modal.style.display = 'flex';
 }
 
 function cerrarModal() {
-    const modal = document.getElementById('modalRegistro');
-    modal.style.display = 'none';
+    document.getElementById('modalApp').style.display = 'none';
 }
 
-// CERRAR MODAL HACIENDO CLIC FUERA DE LA CAJA BLANCA
 window.onclick = function(event) {
-    const modal = document.getElementById('modalRegistro');
+    const modal = document.getElementById('modalApp');
     if (event.target === modal) {
-        modal.style.display = 'none';
+        cerrarModal();
     }
 }
 
-// INTERCEPTAR EL ENVÍO DEL FORMULARIO (SIMULACIÓN DE REGISTRO)
-document.getElementById('formRegistro').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
-    
-    // Obtener los valores ingresados por el usuario
-    const nombre = document.getElementById('nombre').value;
-    const perfil = document.getElementById('perfil').value;
-    
-    // Simular redirección o feedback dinámico interactivo
-    alert(`¡Registro exitoso en SmartBudget, ${nombre}! Iniciando tu onboarding adaptado para el perfil de: ${perfil}.`);
-    
+document.getElementById('modalForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Acción simulada exitosamente.');
     cerrarModal();
-    document.getElementById('formRegistro').reset(); // Limpia los campos del formulario
+    this.reset();
 });
