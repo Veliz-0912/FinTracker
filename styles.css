@@ -281,6 +281,15 @@ section {
     border-radius: 8px;
 }
 
+/* FOOTER */
+.footer {
+    background-color: var(--color-dark);
+    color: rgb(9, 9, 9);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
 /* =========================================
    MENÚ HAMBURGUESA Y RESPONSIVE
 ========================================= */
