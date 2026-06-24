@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBudget - Toma el control de tu dinero sin complicaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN FIJA -->
+    <header class="navbar">
+        <div class="logo">SmartBudget</div>
+        <nav class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#caracteristicas">Características</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#planes">Planes</a>
+        </nav>
+        <button class="btn-primary" onclick="abrirModal()">Empieza Gratis</button>
+    </header>
+
+    <!-- SECCIÓN HERO (INICIO) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Toma el control de tu dinero sin complicaciones</h1>
+            <p>Gestiona tus finanzas personales de forma simple, rápida y automatizada. Diseñada para universitarios, profesionales jóvenes y freelancers.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary btn-large" onclick="abrirModal()">Empieza Gratis Ahora</button>
+                <a href="#caracteristicas" class="btn-secondary">Ver más</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Representación visual de los mockups móviles descritos -->
+            <div class="mockup-placeholder">
+                <div class="mockup-screen">
+                    <span class="mockup-title">Balance Disponible</span>
+                    <span class="mockup-amount">S/ 1,240.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CARACTERÍSTICAS -->
+    <section id="caracteristicas" class="features">
+        <h2>¿Por qué elegir SmartBudget?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Registro en 3 Pasos</h3>
+                <p>Anota tus ingresos y gastos rápidamente desde tu celular en segundos, evitando olvidos y desorden.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Alertas Inteligentes</h3>
+                <p>Recibe notificaciones proactivas antes de exceder tus límites de presupuesto por categoría.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Gráficos Interactivos</h3>
+                <p>Visualiza de manera clara y estética a dónde se va realmente tu dinero cada mes sin usar complejos archivos Excel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section id="testimonios" class="testimonials">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p class="quote">"Siento que gasto mi dinero sin darme cuenta, pero con SmartBudget logré identificar mis gastos hormiga muy rápido."</p>
+                <h4>Adriana Pérez</h4>
+                <span>Estudiante Universitaria</span>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"La adaptabilidad para gestionar mis ingresos variables por proyectos es lo que no encontré en ninguna otra aplicación financiera."</p>
+                <h4>Diego Torres</h4>
+                <span>Trabajador Freelancer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PLANES (PRECIOS) -->
+    <section id="planes" class="pricing">
+        <h2>Planes diseñados para ti</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Plan Gratuito</h3>
+                <div class="price">S/ 0<span>/mes</span></div>
+                <ul>
+                    <li>Registro manual de movimientos</li>
+                    <li>Dashboard con balance general</li>
+                    <li>Gráficos de consumo básicos</li>
+                </ul>
+                <button class="btn-secondary" onclick="abrirModal()">Elegir Plan</button>
+            </div>
+            <div class="price-card pro-card">
+                <div class="badge-pro">Recomendado</div>
+                <h3>Plan Pro</h3>
+                <div class="price">S/ 15<span>/mes</span></div>
+                <ul>
+                    <li>Análisis financiero avanzado con IA</li>
+                    <li>Proyecciones de liquidez futuras</li>
+                    <li>Detección automatizada de Gastos Hormiga</li>
+                </ul>
+                <button class="btn-primary" onclick="abrirModal()">Obtener Pro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 FinTrackers. Todos los derechos reservados. IHC y Tecnologías Móviles - UPC.</p>
+    </footer>
+
+    <!-- VENTANA MODAL FLOTANTE (REGISTRO / ONBOARDING SIMULADO) -->
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="cerrarModal()">&times;</span>
+            <h3>Crea tu cuenta en SmartBudget</h3>
+            <form id="formRegistro">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Adriana Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" required placeholder="ejemplo@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="perfil">Tipo de Perfil</label>
+                    <select id="perfil">
+                        <option value="universitario">Joven Universitario</option>
+                        <option value="profesional">Joven Profesional</option>
+                        <option value="freelancer">Trabajador Independiente / Freelancer</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Registrarme e Iniciar Onboarding</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
